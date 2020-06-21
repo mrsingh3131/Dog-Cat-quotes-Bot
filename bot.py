@@ -31,11 +31,10 @@ def bot():
         data = r.json()
         if data["status"] == "success":
             message = data["message"]
-            msg.media(message)
         else:
             message = 'I could not retrieve a dog image at this time, sorry.'
-        
-        # msg.body(message)
+        msg.media(message)
+        msg.body(message)
         responded = True
     if not responded:
         msg.body('I only know about famous quotes and cats, sorry!')
