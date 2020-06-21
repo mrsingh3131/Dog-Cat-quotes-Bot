@@ -12,13 +12,13 @@ def bot():
     msg = resp.message()
     responded = False
     if 'quote' in incoming_msg:
-        # return a quote
-        # r = requests.get('https://api.quotable.io/random')
-        # if r.status_code == 200:
-        #     data = r.json()
-        #     quote = f'{data["content"]} ({data["author"]})'
-        # else:
-        quote = 'Iaass could not retrieve a quote at this time, sorry.'
+        return a quote
+        r = requests.get('https://api.quotable.io/random')
+        if r.status_code == 200:
+            data = r.json()
+            quote = f'{data["content"]} ({data["author"]})'
+        else:
+            quote = 'I could not retrieve a quote at this time, sorry.'
         msg.body(quote)
         responded = True
     if 'cat' in incoming_msg:
@@ -26,15 +26,15 @@ def bot():
         msg.media('https://cataas.com/cat')
         responded = True
     if 'dog' in incoming_msg:
-        # return a cat pic
-        # msg.media("https://images.dog.ceo/breeds/pinscher-miniature/n02107312_4650.jpg")
+        # return a dog pic
         r = requests.get('https://dog.ceo/api/breeds/image/random')
         data = r.json()
         if data["status"] == "success":
-            message = data["message"] 
+            message = data["message"]
+            msg.media(message)
         else:
             message = 'I could not retrieve a dog image at this time, sorry.'
-        msg.media(message)
+        
         # msg.body(message)
         responded = True
     if not responded:
