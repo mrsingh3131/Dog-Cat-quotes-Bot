@@ -32,7 +32,7 @@ def bot():
         data = r.json()
         if data["status"] == "success":
             message = data["message"]
-            msg.media(img)
+            # msg.media(img) 
         else:
             message = 'I could not retrieve a dog image at this time, sorry.'
         msg.body(message)
