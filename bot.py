@@ -29,12 +29,8 @@ def bot():
         # return a dog pic
         r = requests.get('https://dog.ceo/api/breeds/image/random')
         data = r.json()
-        if data["status"] == "success":
-            message = data["message"]
-        else:
-            message = 'I could not retrieve a dog image at this time, sorry.'
+        message = data["message"]
         msg.media(message)
-        msg.body(message)
         responded = True
     if not responded:
         msg.body('I only know about famous quotes and cats, sorry!')
