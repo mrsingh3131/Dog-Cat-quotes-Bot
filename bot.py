@@ -18,7 +18,7 @@ def bot():
         #     data = r.json()
         #     quote = f'{data["content"]} ({data["author"]})'
         # else:
-        quote = 'Iasas could not retrieve a quote at this time, sorry.'
+        quote = 'Iaas could not retrieve a quote at this time, sorry.'
         msg.body(quote)
         responded = True
     if 'cat' in incoming_msg:
@@ -31,7 +31,7 @@ def bot():
         r = requests.get('https://dog.ceo/api/breeds/image/random')
         data = r.json()
         if data["status"] == "success":
-            img = f'{data["message"]}'
+            message = f'{data["message"]}'
             msg.media(img)
         else:
             message = 'I could not retrieve a dog image at this time, sorry.'
