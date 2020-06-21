@@ -33,7 +33,7 @@ def bot():
         msg.media(message)
         responded = True
     if not responded:
-        msg.body('I only know about famous quotes and cats, sorry!')
+        msg.body('I only know about famous quotes, cats and dogs only, sorry!')
     return str(resp)
 
 
